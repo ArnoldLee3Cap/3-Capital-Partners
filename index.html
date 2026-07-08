@@ -31,7 +31,7 @@
     background: #C9A961;
   }
   .date, .time {
-    font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+    font-family: Georgia, 'Calibri', serif;
     font-weight: bold;
     color: #FFFFFF;
     letter-spacing: 2px;
@@ -62,14 +62,13 @@
       const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
       const dateStr = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
-      const timeStr = pad(now.getHours()) + ':' + pad(now.getMinutes());
+      const timeStr = pad(now.getHours()) + ':' + pad(now.getMinutes())
       document.getElementById('dateLine').textContent = dateStr;
       document.getElementById('timeLine').textContent = timeStr;
     }
 
     updateClock();
-    // update once a minute since seconds are not shown
-    setInterval(updateClock, 60000);
+    setInterval(updateClock, 1000);
   </script>
 </body>
 </html>
